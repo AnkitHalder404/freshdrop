@@ -67,4 +67,59 @@ export interface User {
   role: UserRole;
   avatar: string;
   stars: Record<string, number>; // shopId -> stars
+  email: string;
+  phone: string;
+}
+
+export interface CartItem {
+  product: Product;
+  quantity: number;
+  shopId: string;
+}
+
+export enum OrderStatus {
+  PENDING = 'PENDING',
+  CONFIRMED = 'CONFIRMED',
+  READY = 'READY',
+  PICKED_UP = 'PICKED_UP',
+  CANCELLED = 'CANCELLED'
+}
+
+export interface Order {
+  id: string;
+  shopId: string;
+  shopName: string;
+  items: CartItem[];
+  total: number;
+  starsEarned: number;
+  status: OrderStatus;
+  createdAt: Date;
+  qrCode: string;
+}
+
+export enum NotificationType {
+  LOTTERY_WIN = 'LOTTERY_WIN',
+  LOTTERY_REMINDER = 'LOTTERY_REMINDER',
+  ORDER_UPDATE = 'ORDER_UPDATE',
+  PROMOTION = 'PROMOTION'
+}
+
+export interface Notification {
+  id: string;
+  type: NotificationType;
+  title: string;
+  message: string;
+  read: boolean;
+  createdAt: Date;
+  actionUrl?: string;
+}
+
+export interface LotteryParticipation {
+  id: string;
+  lotteryId: string;
+  shopId: string;
+  shopName: string;
+  prizeProduct: Product;
+  participatedAt: Date;
+  won: boolean;
 }
