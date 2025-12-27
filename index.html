@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreshDrop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Public+Sans:wght@400;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neo: {
+                bg: '#E0E7FF', // Soft indigo background
+                black: '#121212',
+                white: '#FFFFFF',
+                pink: '#FF90E8',
+                yellow: '#FFC900',
+                green: '#23A094',
+                blue: '#3B82F6',
+                red: '#FF6B6B'
+              }
+            },
+            fontFamily: {
+              display: ['"Archivo Black"', 'sans-serif'],
+              sans: ['"Public Sans"', 'sans-serif'],
+              mono: ['"Space Mono"', 'monospace'],
+            },
+            boxShadow: {
+              'neo': '5px 5px 0px 0px #000000',
+              'neo-lg': '8px 8px 0px 0px #000000',
+              'neo-sm': '3px 3px 0px 0px #000000',
+              'neo-pressed': '0px 0px 0px 0px #000000',
+            },
+            borderWidth: {
+              '3': '3px',
+              '4': '4px',
+            },
+            animation: {
+              'marquee': 'marquee 25s linear infinite',
+            },
+            keyframes: {
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom Scrollbar for Neo Feel */
+      ::-webkit-scrollbar {
+        width: 12px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #FFFFFF; 
+        border-left: 3px solid #000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #000000; 
+        border: 2px solid #FFFFFF;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #FF90E8; 
+      }
+      
+      .pattern-grid {
+        background-color: #E0E7FF;
+        background-image: linear-gradient(#121212 1px, transparent 1px), linear-gradient(90deg, #121212 1px, transparent 1px);
+        background-size: 40px 40px;
+        background-position: -1px -1px;
+        opacity: 0.05;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[#E0E7FF] text-neo-black antialiased overflow-x-hidden font-sans">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

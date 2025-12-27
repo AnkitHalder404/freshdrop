@@ -1,0 +1,8 @@
+{
+  "name": "FreshDrop",
+  "description": "A luxury gamified marketplace connecting merchants with surplus inventory to customers via lotteries, quizzes, and exclusive drops.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ]
+}
